@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+.navbar-brand{
+    font-weight: 500;
+    color: whitesmoke;
+    font-size: 24px;
+    transition: 0.3s color;
+}
+.login-button {
+    background-color: whitesmoke;
+    color: black;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: 0.5s background-color;
+}
+
+.login-button:hover {
+    background-color: rgb(95, 133, 117);
+}
+.navbar{
+    height: 80px;
+    margin: 20px;
+    border-radius: 20px;
+    padding: 0.5rem;
+    background-color: rgba(8, 143, 143, 0.2);
+    box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.2);
+}
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+}
+
+.navbar-toggler:focus,
+.btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    color: whitesmoke;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #000;
+}
+
+@media(min-width:1250px) {
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: beige;
+        visibility: hidden;
+        transition: 0.5s ease-in-out;
+    }
+
+    .nav-link:hover::before,
+    .nav-link.active::before {
+        width: 100%;
+        visibility: visible;
+        
+    }
+    
+}
+.sidebar{
+    background-color: rgba(8, 143, 143, 0.15);
+}

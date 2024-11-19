@@ -1,0 +1,56 @@
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css" integrity="sha384-NvKbDTEnL+A8F/AA5Tc5kmMLSJHUO868P+lDtTpJIeQdGYaUIuLr4lVGOEA1OcMy" crossorigin="anonymous">
+</head>
+<app-navbar></app-navbar>
+
+<div class="wrapper">
+    <div class="container main ">
+        <div class="row">
+            <div class="col-md-6 side-image  " style="display: block; ">
+                <div class="box">
+                    <mat-icon class="icon" aria-hidden="false" aria-label="Example home icon" fontIcon="home" style="color: aliceblue;"></mat-icon>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, porro.</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <mat-icon class="icon"  aria-hidden="false" aria-label="Example home icon" fontIcon="phone" style="color: aliceblue;"></mat-icon>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>062234455</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <mat-icon class="icon"  aria-hidden="false" aria-label="Example home icon" fontIcon="email" style="color: aliceblue;"></mat-icon>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>midolalaagmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 right">
+                <div class="input-box">
+                    <header style="color: aliceblue;">Contact Us</header>
+                    <mat-form-field [style.width]="'100%'">
+                        <mat-label>Full name</mat-label>
+                        <input matInput type="text" placeholder="Yassir Err"required>
+                        
+                    </mat-form-field>
+                    <mat-form-field [style.width]="'100%'">
+                        <mat-label>Email</mat-label>
+                        <input matInput type="email" placeholder="pat@example.com"required>
+                        
+                    </mat-form-field>
+                    <mat-form-field [style.width]="'100%'">
+                        <mat-label>Type your message</mat-label>
+                        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>                        
+                    </mat-form-field>
+                    <!-- <a id="forgotPassword">Mot de passe oublié ?</a> -->
+                    <button #loginbtn mat-flat-button  color="primary" [style.width]="'100%'" >Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

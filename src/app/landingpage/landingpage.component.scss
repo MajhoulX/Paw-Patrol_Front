@@ -1,0 +1,37 @@
+
+.login-button {
+    background-color: whitesmoke;
+    color: black;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: 0.5s background-color;
+}
+
+.login-button:hover {
+    background-color: rgb(95, 133, 117);
+}
+.hero-section{
+    background-image: url("/assets/img/landingpic3.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+.hero-section::before{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+.hero-section .container{
+    height: 100vh;
+    z-index: 1;
+    position: relative;
+    
+}
+
