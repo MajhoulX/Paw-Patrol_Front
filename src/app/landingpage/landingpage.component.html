@@ -2,11 +2,11 @@
 <section class="hero-section">
     <div class="container d-flex align-items-center justify-content-center text-white flex-column">
         
-        <div class=" p-2 mt-6" style="font-size: 70px; color: whitesmoke;">{{header}}</div>
+        <div class=" p-2 mt-6" style="font-size: 70px; color: whitesmoke;">Paw Patrol</div>
         <div class=" pt-4" style="font-size: 30px; ">We believe all pets should have a home.</div>
         <div class="p-4  ">
             <a href="/about" class="login-button m-1">Learn more</a>
-            <a href="/login" class="login-button m-1">Login</a>
+            <a *ngIf="!isLoggedIn" routerLink="/login" class="login-button">Login</a>
         </div>
         
     </div>

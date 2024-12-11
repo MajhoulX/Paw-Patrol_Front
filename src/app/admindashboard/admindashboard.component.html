@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+<div class="container" style="margin-top: 150px;">
+  
+  <h2>Animals List</h2>
+
+  <!-- Table to display animals -->
+  <button type="button" class="btn go-back" (click)="goBack()">Add Animal</button>
+  <table class="table table-bordered">
+    
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Species</th>
+        <th>Age</th>
+        <th>Sex</th>
+        <th>Location</th>
+        <th>Description</th>
+        <th>Actions</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let animal of animals">
+        <td>{{ animal.name }}</td>
+        <td>{{ animal.species }}</td>
+        <td>{{ animal.age }}</td>
+        <td>{{ animal.sex }}</td>
+        <td>{{ animal.location }}</td>
+        <td>{{ animal.description }}</td>
+        <td>
+          <!-- Edit button -->
+          <button class="btn btn-warning" (click)="editAnimal(animal.id)">Edit</button>
+          <!-- Delete button -->
+          <button class="btn btn-danger" (click)="deleteAnimal(animal.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

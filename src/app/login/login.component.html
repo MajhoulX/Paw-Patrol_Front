@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 
 <div class="wrapper">
-    <div class="container main ">
+    <div class="container main">
         <div class="row">
             <div class="col-md-6 side-image">
                 <div class="text">
@@ -12,19 +12,38 @@
             <div class="col-md-6 right">
                 <div class="input-box">
                     <header>Connexion</header>
-                    <mat-form-field [style.width]="'100%'">
-                        <mat-label>Email</mat-label>
-                        <input matInput type="email" placeholder="pat@example.com"required>
-                        
-                    </mat-form-field>
-                    <mat-form-field [style.width]="'100%'">
-                        <mat-label>Password</mat-label>
-                        <input matInput type="password"  required>
-                        
-                    </mat-form-field>
-                    <!-- <a id="forgotPassword">Mot de passe oublié ?</a> -->
-                    <button #loginbtn mat-flat-button  color="primary" [style.width]="'100%'">Login</button>
-                    <p style="margin-top: 16px; justify-self: center;" >Don't have an account yet ?<br><a href="/signup" style="justify-self: center;">Create new account</a></p>
+                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                        <!-- Email Field -->
+                        <mat-form-field [style.width]="'100%'">
+                            <mat-label>Email</mat-label>
+                            <input matInput type="email" formControlName="email" placeholder="pat@example.com">
+                            <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+                                Email is <strong>required</strong>
+                            </mat-error>
+                            <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+                                Please enter a valid email address
+                            </mat-error>
+                        </mat-form-field>
+
+                        <!-- Password Field -->
+                        <mat-form-field [style.width]="'100%'">
+                            <mat-label>Password</mat-label>
+                            <input matInput type="password" formControlName="password">
+                            <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+                                Password is <strong>required</strong>
+                            </mat-error>
+                            <mat-error *ngIf="loginForm.get('password')?.hasError('minlength')">
+                                Password must be at least 6 characters long
+                            </mat-error>
+                        </mat-form-field>
+
+                        <!-- Login Button -->
+                        <button mat-flat-button color="primary" [style.width]="'100%'">
+                            Login
+                        </button>
+                    </form>
+                    <p style="margin-top: 16px; justify-self: center;" >Don't have an account yet ?<br><a href="/signup" 
+                        style="justify-self: center;">Create new account</a></p>
                 </div>
             </div>
         </div>

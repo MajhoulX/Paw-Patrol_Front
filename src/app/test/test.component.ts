@@ -1,18 +1,19 @@
-import { CommonModule } from '@angular/common'; // Ensure this is imported
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
-  selector: 'app-navbar',
+  selector: 'app-test',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, CommonModule],
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  imports: [
+    RouterLink, RouterLinkActive, CommonModule,
+    
+  ],
+  templateUrl: './test.component.html',
+  styleUrls: ['./test.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class TestComponent implements OnInit {
   isLoggedIn = false;
-  isAdmin = false;
 
   ngOnInit() {
     // Access localStorage only when in a browser
@@ -21,11 +22,6 @@ export class NavbarComponent implements OnInit {
     } else {
       this.isLoggedIn = false;
     }
-
-    const obj = JSON.parse(localStorage.getItem('user') ?? '');
-    console.log(obj);
-
-    this.isAdmin = obj.role == 'admin';
   }
 
   logout() {

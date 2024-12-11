@@ -1,0 +1,115 @@
+.container {
+  margin-top: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.table-bordered {
+  border: 1px solid #ddd;
+}
+
+.table th, .table td {
+  padding: 12px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f8f9fa;
+}
+
+.table td {
+  border-top: 1px solid #ddd;
+}
+
+.btn {
+  padding: 8px 12px;
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.btn-warning {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+}
+
+.btn-warning:hover {
+  background-color: #e68900;
+}
+
+.btn-danger {
+  background-color: #f44336;
+  color: white;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #d32f2f;
+}
+.button-container {
+  display: flex;
+  gap: 10px; /* Adds space between the buttons */
+  justify-content: flex-start; /* Aligns the buttons to the left, can be 'center' for centering */
+  margin-top: 20px; /* Adds some space above the buttons */
+}
+
+/* Styling for individual buttons */
+button {
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Styling for Go Back Button */
+button.go-back {
+  background-color: #6c757d; /* Grey background */
+  color: white;
+  border: none;
+}
+
+/* Hover effect for the Go Back button */
+button.go-back:hover {
+  background-color: #5a6368;
+  transform: scale(1.05); /* Adds a subtle scaling effect on hover */
+}
+
+/* Styling for Add Animal Button */
+button.submit {
+  background-color: #007bff; /* Blue background */
+  color: white;
+  border: none;
+}
+
+/* Hover effect for Add Animal button */
+button.submit:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+/* File input specific styling */
+input[type="file"] {
+  display: block; /* Make sure the file input is block-level */
+  width: 100%; /* Make the file input fill the available width */
+  padding: 8px; /* Some padding for better visual appearance */
+  font-size: 14px; /* Make font size consistent with other inputs */
+  border: 1px solid #ccc; /* Border similar to other form inputs */
+  border-radius: 4px; /* Rounded corners for a modern look */
+  margin-top: 8px; /* Add some space above the file input */
+  background-color: #fff; /* Make sure the background is white */
+}
+
+/* Optional styling for file input when it's selected */
+input[type="file"]:focus {
+  border-color: #007bff; /* Blue border on focus */
+  outline: none; /* Remove outline */
+}
