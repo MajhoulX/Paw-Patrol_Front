@@ -29,10 +29,9 @@ export class LoginComponent {
     });
   }
   ngOnInit(): void {
-    // Check if the user is already logged in
     if (typeof window !== 'undefined' && localStorage.getItem('user')) {
       // If logged in, redirect to the user dashboard
-      this.router.navigate(['/user-dashboard']);
+      this.router.navigate(['/adopt']);
     }
   }
 

@@ -30,7 +30,7 @@ export class UpdateAnimalComponent implements OnInit {
     this.editAnimalForm = this.fb.group({
       name: ['', [Validators.required]],
       species: ['', [Validators.required]],
-      age: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],  // Only numbers
+      age: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       sex: ['', [Validators.required]],
       description: ['', [Validators.required]],
       location: ['', [Validators.required]],
@@ -39,16 +39,13 @@ export class UpdateAnimalComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Fetch the animal ID from the route parameters
     this.animalId = +this.route.snapshot.paramMap.get('id')!;
     this.fetchAnimalDetails(this.animalId);
   }
 
-  // Fetch animal details based on animal ID
   fetchAnimalDetails(id:number): void {
     this.http.get(`http://localhost:8080/api/animals/` + id).subscribe({
       next: (response: any) => {
-        // Populate form with animal data
         this.editAnimalForm.patchValue({
           name: response.name,
           species: response.species,
@@ -66,7 +63,6 @@ export class UpdateAnimalComponent implements OnInit {
     });
   }
 
-  // Form submission handler
   onSubmit(): void {
     if (this.editAnimalForm.valid) {
       const formData = new FormData();
@@ -86,12 +82,11 @@ export class UpdateAnimalComponent implements OnInit {
       .subscribe({
         next: (response: any) => {
           console.log('Animal updated successfully:', response);
-          this.router.navigate(['/animals']);  // Navigate to the animals list
+          this.router.navigate(['/dashboard']);  
           alert('Animal updated successfully!');
         },
         error: (error) => {
           console.error('Error updating animal:', error);
-          //alert('There was an error updating the animal. Please try again.');
         }
       });
     } else {
@@ -107,8 +102,7 @@ export class UpdateAnimalComponent implements OnInit {
     }
   }
 
-  // Go back to the animal list page
   goBack(): void {
-    this.router.navigate(['/dashboard']);  // Navigate to animals list or dashboard
+    this.router.navigate(['/dashboard']); 
   }
 }

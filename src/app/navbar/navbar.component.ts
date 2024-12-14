@@ -15,7 +15,6 @@ export class NavbarComponent implements OnInit {
   isAdmin = false;
 
   ngOnInit() {
-    // Access localStorage only when in a browser
     if (typeof window !== 'undefined' && localStorage.getItem('user')) {
       this.isLoggedIn = true;
     } else {
@@ -29,7 +28,6 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
-    // Clear the localStorage
     if (typeof window !== 'undefined') {
       localStorage.removeItem('user');
       this.isLoggedIn = false;

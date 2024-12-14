@@ -15,7 +15,6 @@ export class LandingpageComponent{
   isLoggedIn = false;
 
   ngOnInit() {
-    // Access localStorage only when in a browser
     if (typeof window !== 'undefined' && localStorage.getItem('user')) {
       this.isLoggedIn = true;
     } else {

@@ -29,7 +29,7 @@ export class AddAnimalComponent {
       sex: ['', [Validators.required]],
       description: ['', [Validators.required]],
       location: ['', [Validators.required]],
-      picture: ['', [Validators.required]]  // Assuming you are handling the picture upload
+      picture: ['', [Validators.required]] 
     });
   }
 
@@ -53,7 +53,7 @@ export class AddAnimalComponent {
       this.http.post('http://localhost:8080/api/animals', formData).subscribe({
         next: (response: any) => {
           console.log('Animal added successfully:', response);
-          this.router.navigate(['/dashboard']);  // Redirect to animals list or dashboard
+          this.router.navigate(['/dashboard']);  
           alert('Animal added successfully!');
         },
         error: (error) => {
@@ -73,6 +73,6 @@ export class AddAnimalComponent {
     }
   }
   goBack() {
-    this.router.navigate(['/dashboard']);  // Adjust the route as needed
+    this.router.navigate(['/dashboard']);  
   }
 }

@@ -30,21 +30,17 @@ export class MainpageComponent implements OnInit {
   constructor(private router: Router, private http: HttpClient) {}
 
   ngOnInit(): void {
-    // Check if the user is NOT logged in
     if (typeof window !== 'undefined' && !localStorage.getItem('user')) {
-      // If NOT logged in, redirect to the login page
       this.router.navigate(['/login']);
     } else {
-      // Fetch the animals when the component initializes
       this.fetchAnimals();
     }
   }
 
   fetchAnimals(): void {
-    // Assuming you have an API endpoint that fetches animals
     this.http.get<any[]>('http://localhost:8080/api/animals').subscribe({
       next: (data) => {
-        this.animals = data; // Store the fetched animals
+        this.animals = data; 
         this.filter();
       },
       error: (error) => {
@@ -54,22 +50,18 @@ export class MainpageComponent implements OnInit {
     });
   }
 
-  // Function for adopting an animal (can be expanded)
   adoptAnimal(animal: any): void {
     console.log('Adopted animal:', animal);
     alert(`You have been sent the owners infos to complete adopting ${animal.name} in your email`);
-    // Add logic for adopting the animal (e.g., API call)
   }
   
   
   filter(): void {
-    // Reset filtered animals to include all animals initially
     this.filteredAnimals = this.animals.filter(animal => {
       let matchesSex = true;
       let matchesLocation = true;
       let matchesSpecies = true;
   
-      // Check if the 'sex' filter is provided and matches
       if (this.filterForm.controls.sex.value) {
         matchesSex = animal.sex?.toLowerCase().includes(this.filterForm.controls.sex.value.toLowerCase());
       }

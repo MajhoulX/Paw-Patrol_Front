@@ -5,7 +5,6 @@ import { SignupComponent } from './signup/signup.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
-import { TestComponent } from './test/test.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { NgModule } from '@angular/core';
 import { AddAnimalComponent } from './addanimal/addanimal.component';
@@ -19,7 +18,6 @@ export const routes: Routes = [
     { path: "signup", component: SignupComponent },
     { path: "about", component: AboutComponent },
     { path: "contact", component: ContactComponent },
-    { path: "test", component: TestComponent },
     { path: "adopt", component: MainpageComponent },
     { path: "dashboard", component: AdmindashboardComponent },
     { path: "add", component:AddAnimalComponent},
